@@ -1,55 +1,282 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vercel - Build and deploy on the AI Cloud</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-logo">
-      </div>
-      
-      <ul class="navbar-menu">
-        <li><a href="#products">Products</a></li>
-        <li><a href="#resources">Resources</a></li>
-        <li><a href="#solutions">Solutions</a></li>
-        <li><a href="#enterprise">Enterprise</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-      </ul>
-      
-      <div class="navbar-buttons">
-        <button class="btn-login">Log In</button>
-        <button class="btn-secondary">Ask AI</button>
-        <button class="btn-signup">Sign Up</button>
-      </div>
-    </div>
-  </nav>
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Build and deploy on the AI Cloud.</h1>
-      <p class="hero-description">
-        Vercel provides the developer tools and cloud infrastructure<br>
-        to build, scale, and secure a faster, more personalized web.
-      </p>
-      
-      <div class="hero-buttons">
-        <button class="btn-primary">
-          <span class="triangle-icon">▲</span>
-          Start Deploying
-        </button>
-        <button class="btn-secondary-dark">Get a Demo</button>
-      </div>
-    </div>
+body {
+  background-color: #000000;
+  color: #b94242;
+  font-family: -apple-system,', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell;
+  overflow-x: hidden;
+}
 
-    <!-- Gradient Background Element -->
-    <div class="gradient-pyramid"></div>
-  </section>
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 900;
+  padding: 1rem 2rem;
+}
 
-</body>
-</html>
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logo-triangle {
+  font-size: 1.2rem;
+}
+
+.logo-text {
+  letter-spacing: 0.5px;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  flex: 1;
+  margin: 0 3rem;
+}
+
+.navbar-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 200ms ease;
+}
+
+.navbar-menu a:hover {
+  color: #888888;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn-login {
+  background: gray;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+  transition: color 200ms ease;
+}
+
+.btn-login:hover {
+  color: #888888;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #888888;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.btn-signup {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-signup:hover {
+  background-color: #f2f2f2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 10;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #888888;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 200ms ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #f2f2f2;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+.triangle-icon {
+  font-size: 0.8rem;
+}
+
+.btn-secondary-dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.btn-secondary-dark:hover {
+  background-color: #2a2a2a;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary-dark:active {
+  transform: translateY(1px);
+}
+
+/* Gradient Pyramid Background */
+.gradient-pyramid {
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: conic-gradient(
+    from 45deg,
+    red 0deg,
+    #00ff00 90deg,
+    #ffff00 180deg,
+    #ff6600 270deg,
+    #0088ff 360deg
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+/* Pyramid lines effect using clip-path */
+.gradient-pyramid::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 300px solid rgba(255, 255, 255, 0.05);
+  filter: blur(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-menu {
+    gap: 1.5rem;
+    margin: 0 1.5rem;
+  }
+
+  .navbar-buttons {
+    gap: 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary-dark {
+    width: 100%;
+  }
+} 
